@@ -20,7 +20,7 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService es;
 	
-	@PostMapping("/employees")
+	@PostMapping("/employee")
 	public Employee createEmployee(Employee e) {
 		return es.saveEmployee(e);
 	}
@@ -30,7 +30,7 @@ public class EmployeeController {
 		return es.getEmployee();
 	}
 	
-	@GetMapping("/employees/{id}")
+	@GetMapping("/employee/{id}")
 	public Optional<Employee> getEmployee(@PathVariable("id") Long id) {
 		Optional<Employee> e = es.getEmployee(id);
 		if (e.isPresent()) {
